@@ -38,23 +38,56 @@ class Serie(Programa):
     def __str__(self):
         return f"{self._nome} / {self.ano} / {self.temporadas} temporadas / {self._likes} likes."
 
-vingadores = Filme("vingadores - guerra infinita", 2018, 160)
-vingadores.dar_like()
-vingadores.dar_like()
-vingadores.dar_like()
-vingadores.dar_like()
-vingadores.dar_like()
+class Playlist:
+    def __init__(self, nome, programas):
+        self.nome = nome.title()
+        self._programas = programas
 
+    @property
+    def listagem(self):
+        return self._programas
+
+    @property
+    def tamanho(self):
+        return len(self._programas)
+
+vingadores = Filme("vingadores - guerra infinita", 2018, 160)
 atlanta = Serie("atlanta", 2018, 2)
+tmep = Filme("Todo mundo em pânico", 1999, 100)
+demolidor = Serie("Demolidor", 2016, 2)
+
+
+vingadores.dar_like()
+vingadores.dar_like()
+vingadores.dar_like()
+vingadores.dar_like()
+vingadores.dar_like()
 atlanta.dar_like()
 atlanta.dar_like()
 atlanta.dar_like()
+atlanta.dar_like()
+atlanta.dar_like()
+atlanta.dar_like()
+atlanta.dar_like()
+atlanta.dar_like()
+tmep.dar_like()
+tmep.dar_like()
+tmep.dar_like()
+demolidor.dar_like()
+demolidor.dar_like()
+demolidor.dar_like()
+demolidor.dar_like()
+demolidor.dar_like()
+demolidor.dar_like()
 
 print()
 # print(f"{vingadores.nome} / {vingadores.ano} / {vingadores.duracao}min / {vingadores.likes} likes")
 # print(f"{atlanta.nome} / {atlanta.ano} / {atlanta.temporadas} temporadas / {atlanta.likes} likes")
 
-filmes_e_series = [vingadores, atlanta]
+filmes_e_series = [vingadores, atlanta, tmep, demolidor]
 
-for programa in filmes_e_series:
+playlist_fim_de_semana = Playlist("fim de semana", filmes_e_series)
+
+print(f"{playlist_fim_de_semana.nome} - {playlist_fim_de_semana.tamanho} programas")
+for programa in playlist_fim_de_semana.listagem:
     print(programa)
