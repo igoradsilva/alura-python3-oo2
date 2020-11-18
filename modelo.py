@@ -1,4 +1,4 @@
-class Programa:
+class Programa():
     def __init__(self, nome, ano):
         self._nome = nome.title()
         self.ano = ano
@@ -38,7 +38,7 @@ class Serie(Programa):
     def __str__(self):
         return f"{self._nome} / {self.ano} / {self.temporadas} temporadas / {self._likes} likes."
 
-class Playlist:
+class Playlist():
     def __init__(self, nome, programas):
         self.nome = nome.title()
         self._programas = programas
